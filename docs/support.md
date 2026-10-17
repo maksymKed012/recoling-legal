@@ -4,7 +4,7 @@ RecoLing is an iOS app that turns photos of your handwritten language-lesson not
 
 ## Contact
 
-Questions, bug reports or feedback: **TODO(max): support contact email**
+Questions, bug reports or feedback: [maksym.ked@gmail.com](mailto:maksym.ked@gmail.com)
 
 When reporting a problem, please include your iOS version, the app version (shown in the App Store) and a short description of what happened.
 

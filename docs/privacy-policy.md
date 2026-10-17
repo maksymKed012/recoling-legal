@@ -6,9 +6,9 @@ This policy explains what data the RecoLing iOS app and its server handle, why, 
 
 ## 1. Who we are
 
-RecoLing is provided by **TODO(max): legal name of the person or company responsible for RecoLing (the data controller) and a postal address**.
+RecoLing is provided by Maksym Ked, an individual developer, who is the data controller for the personal data described in this policy.
 
-Contact for privacy questions and requests: **TODO(max): privacy contact email**
+Contact for privacy questions and requests: [maksym.ked@gmail.com](mailto:maksym.ked@gmail.com)
 
 ## 2. What the app does
 
@@ -56,9 +56,9 @@ The device ID is kept in the iOS Keychain. According to Expo, whose SecureStore 
 | --- | --- | --- |
 | Photo, language pair, extracted vocabulary | Our server | Held in memory only while your request is being processed, not stored. See the logging TODO in section 3. |
 | Photo, language pair, extracted vocabulary | Anthropic | Deleted within 30 days, with the exceptions described in section 4. |
-| Device ID: rate-limit counters | Upstash | Expire automatically about 2 minutes after your last request. **TODO(max): confirm that production `RATE_LIMIT_WINDOW_MS` is 60000. Counters expire after 2 × window + 1 second.** |
+| Device ID: rate-limit counters | Upstash | Expire automatically within about 2 minutes of your last request. |
 | Device ID: rate-limit usage statistics (hourly counts per device ID of allowed and blocked requests) | Upstash | **TODO(max): these records currently have no automatic expiry. Disable rate-limit analytics or add an expiry, then state the period here.** |
-| Connection data and server logs | Railway | **TODO(max): state the period for the Railway plan in use. Railway keeps logs for 3 days (Free), 7 days (Trial or Hobby), 30 days (Pro) or up to 90 days (Enterprise).** |
+| Connection data and server logs | Railway | We can access them for 7 days, the log retention for our Railway plan. Railway's documentation says that upgrading a plan restores older logs, so Railway may store them for longer. **TODO(max): ask Railway how long logs are actually stored, then state that here.** |
 
 ## 7. Who we share data with
 
@@ -74,9 +74,9 @@ We do not sell your data. The app contains no advertising, no analytics or crash
 
 Our providers process data outside the UK and the EU:
 
-- **Anthropic** stores API data in the United States. Its servers that run the AI model may be in the US, Europe, Asia or Australia ([source](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers)). **TODO(max): check whether the Anthropic workspace sets the default inference geo to `us`. The server does not set it per request, so unless the workspace overrides it, Anthropic's global default routing applies. Then update this bullet.**
-- **Railway** servers: **TODO(max): confirm the Railway deployment region.**
-- **Upstash** database: **TODO(max): confirm the Upstash Redis region.**
+- **Anthropic** stores API data in the United States. We use Anthropic's default global routing, so the AI model that reads your photo may run in any of Anthropic's available locations, which Anthropic lists as the US, Europe, Asia and Australia ([source](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers), [data residency docs](https://platform.claude.com/docs/en/manage-claude/data-residency)).
+- **Railway** runs our server in its US West region, in the United States.
+- **Upstash** stores the rate-limit data in its London, UK region (AWS eu-west-2). **TODO(max): this is an Upstash Global database. Check whether any read regions are configured, and list them here if so.**
 
 Safeguards for these transfers: **TODO(max): confirm the transfer mechanism with each provider, for example the UK International Data Transfer Addendum or the EU Standard Contractual Clauses in their data processing agreements, and name it here.**
 
