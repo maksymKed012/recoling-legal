@@ -78,11 +78,14 @@ Our providers process data outside the UK and the EU:
 - **Railway** runs our server in its US West region, in the United States, and stores its logs there.
 - **Upstash** stores the rate-limit data in its London, UK region (AWS eu-west-2) only.
 
-Safeguards for these transfers: **TODO(max): confirm the transfer mechanism with each provider, for example the UK International Data Transfer Addendum or the EU Standard Contractual Clauses in their data processing agreements, and name it here.**
+Safeguards for these transfers: each provider's data processing agreement includes the EU Standard Contractual Clauses together with the UK Addendum to them, issued by the Information Commissioner. These are the contract terms that UK and EU law accept for transfers to countries such as the US. See [Anthropic's](https://www.anthropic.com/legal/data-processing-addendum), [Railway's](https://railway.com/legal/dpa) and [Upstash's](https://upstash.com/trust/dpa.pdf) agreements. **TODO(max): Railway's agreement only takes effect once it is signed through DocuSign. Sign it, then remove this note.**
 
 ## 9. Your rights (UK and EU GDPR)
 
-**Our legal basis:** **TODO(max): confirm the lawful basis. Suggested draft, to be checked: processing your photo and language pair is necessary to provide the import feature you ask for (contract), and the device ID and connection data are used for our legitimate interest in keeping the service secure and preventing abuse.**
+**Our legal basis:**
+
+- **Photo, language pair and extracted vocabulary:** processing them is necessary to provide the import feature you ask for (performance of a contract, Article 6(1)(b) GDPR).
+- **Device ID, connection data and server logs:** we use these for our legitimate interest in keeping the service secure, available and free from abuse (Article 6(1)(f) GDPR). You can object to this processing (see below).
 
 You have the right to:
 
@@ -92,7 +95,7 @@ You have the right to:
 - receive the data you gave us in a portable format (portability);
 - complain to a data protection authority. In the UK this is the Information Commissioner's Office ([ico.org.uk](https://ico.org.uk/make-a-complaint/)). In the EU it is the authority in your country.
 
-**How to make a request:** email us at the address in section 1. We will reply within one month. Because RecoLing has no accounts, the only server-side records we could link to you are those tied to your device ID, and we may need that ID to find them. **TODO(max): the app does not currently show the device ID to the user. Decide how users can provide it, or explain what you can do without it.**
+**How to make a request:** email us at the address in section 1. We will reply within one month. Because RecoLing has no accounts, the only server-side records we can link to you are those tied to your device ID. Please include it in your email. You can find it, and copy it, in the app under **Settings → Device ID**. **TODO(max): the app does not show the device ID yet. Ship the Settings row, then remove this note.**
 
 Our hosting provider's logs, which include IP addresses, cannot be deleted before their 90-day retention period ends, so we cannot erase that data early. It is deleted automatically after 90 days.
 
