@@ -76,7 +76,7 @@ Our providers process data outside the UK and the EU:
 
 - **Anthropic** stores API data in the United States. We use Anthropic's default global routing, so the AI model that reads your photo may run in any of Anthropic's available locations, which Anthropic lists as the US, Europe, Asia and Australia ([source](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers), [data residency docs](https://platform.claude.com/docs/en/manage-claude/data-residency)).
 - **Railway** runs our server in its US West region, in the United States.
-- **Upstash** stores the rate-limit data in its London, UK region (AWS eu-west-2). **TODO(max): this is an Upstash Global database. Check whether any read regions are configured, and list them here if so.**
+- **Upstash** stores the rate-limit data in its London, UK region (AWS eu-west-2) only.
 
 Safeguards for these transfers: **TODO(max): confirm the transfer mechanism with each provider, for example the UK International Data Transfer Addendum or the EU Standard Contractual Clauses in their data processing agreements, and name it here.**
 
