@@ -78,8 +78,7 @@ Our providers process data outside the UK and the EU:
 - **Railway** runs our server in its US West region, in the United States, and stores its logs there.
 - **Upstash** stores the rate-limit data in its London, UK region (AWS eu-west-2) only.
 
-Safeguards for these transfers: each provider's data processing agreement includes the EU Standard Contractual Clauses together with the UK Addendum to them, issued by the Information Commissioner. These are the contract terms that UK and EU law accept for transfers to countries such as the US. See [Anthropic's](https://www.anthropic.com/legal/data-processing-addendum), [Railway's](https://railway.com/legal/dpa) and [Upstash's](https://upstash.com/trust/dpa.pdf) agreements. **TODO(max): Railway's agreement only takes effect once it is signed through DocuSign. Sign it, then remove this note.**
-
+Safeguards for these transfers: each provider's data processing agreement includes the EU Standard Contractual Clauses together with the UK Addendum to them, issued by the Information Commissioner. These are the contract terms that UK and EU law accept for transfers to countries such as the US. See [Anthropic's](https://www.anthropic.com/legal/data-processing-addendum), [Railway's](https://railway.com/legal/dpa) and [Upstash's](https://upstash.com/trust/dpa.pdf) agreements.
 ## 9. Your rights (UK and EU GDPR)
 
 **Our legal basis:**
