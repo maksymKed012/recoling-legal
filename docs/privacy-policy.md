@@ -57,7 +57,6 @@ The device ID is kept in the iOS Keychain. According to Expo, whose SecureStore 
 | Photo, language pair, extracted vocabulary | Our server | Held in memory only while your request is being processed, not stored. |
 | Photo, language pair, extracted vocabulary | Anthropic | Deleted within 30 days, with the exceptions described in section 4. |
 | Device ID: rate-limit counters | Upstash | Expire automatically within about 2 minutes of your last request. |
-| Device ID: rate-limit usage statistics (hourly counts per device ID of allowed and blocked requests) | Upstash | **TODO(max): these records currently have no automatic expiry. Disable rate-limit analytics or add an expiry, then state the period here.** |
 | Connection data and server logs | Railway | Stored by Railway for 90 days, then deleted automatically. We can view them for the first 7 days. Railway cannot delete individual log entries early ([Railway staff answer, 8 October 2026](https://station.railway.com/questions/log-retention-and-data-processing-agreem-223bf7c1)). |
 
 ## 7. Who we share data with
