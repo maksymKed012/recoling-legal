@@ -95,7 +95,7 @@ You have the right to:
 - receive the data you gave us in a portable format (portability);
 - complain to a data protection authority. In the UK this is the Information Commissioner's Office ([ico.org.uk](https://ico.org.uk/make-a-complaint/)). In the EU it is the authority in your country.
 
-**How to make a request:** email us at the address in section 1. We will reply within one month. Because RecoLing has no accounts, the only server-side records we can link to you are those tied to your device ID. Please include it in your email. You can find it, and copy it, in the app under **Settings → Device ID**. **TODO(max): the app does not show the device ID yet. Ship the Settings row, then remove this note.**
+**How to make a request:** email us at the address in section 1. We will reply within one month. Because RecoLing has no accounts, the only server-side records we can link to you are those tied to your device ID. Please include it in your email. You can find it in the app under **Settings → Device ID**; tap it to copy.
 
 Our hosting provider's logs, which include IP addresses, cannot be deleted before their 90-day retention period ends, so we cannot erase that data early. It is deleted automatically after 90 days.
 
