@@ -58,7 +58,7 @@ The device ID is kept in the iOS Keychain. According to Expo, whose SecureStore 
 | Photo, language pair, extracted vocabulary | Anthropic | Deleted within 30 days, with the exceptions described in section 4. |
 | Device ID: rate-limit counters | Upstash | Expire automatically within about 2 minutes of your last request. |
 | Device ID: rate-limit usage statistics (hourly counts per device ID of allowed and blocked requests) | Upstash | **TODO(max): these records currently have no automatic expiry. Disable rate-limit analytics or add an expiry, then state the period here.** |
-| Connection data and server logs | Railway | We can access them for 7 days, the log retention for our Railway plan. Railway's documentation says that upgrading a plan restores older logs, so Railway may store them for longer. **TODO(max): ask Railway how long logs are actually stored, then state that here.** |
+| Connection data and server logs | Railway | Stored by Railway for 90 days, then deleted automatically. We can view them for the first 7 days. Railway cannot delete individual log entries early ([Railway staff answer, 8 October 2026](https://station.railway.com/questions/log-retention-and-data-processing-agreem-223bf7c1)). |
 
 ## 7. Who we share data with
 
@@ -75,7 +75,7 @@ We do not sell your data. The app contains no advertising, no analytics or crash
 Our providers process data outside the UK and the EU:
 
 - **Anthropic** stores API data in the United States. We use Anthropic's default global routing, so the AI model that reads your photo may run in any of Anthropic's available locations, which Anthropic lists as the US, Europe, Asia and Australia ([source](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers), [data residency docs](https://platform.claude.com/docs/en/manage-claude/data-residency)).
-- **Railway** runs our server in its US West region, in the United States.
+- **Railway** runs our server in its US West region, in the United States, and stores its logs there.
 - **Upstash** stores the rate-limit data in its London, UK region (AWS eu-west-2) only.
 
 Safeguards for these transfers: **TODO(max): confirm the transfer mechanism with each provider, for example the UK International Data Transfer Addendum or the EU Standard Contractual Clauses in their data processing agreements, and name it here.**
@@ -93,6 +93,8 @@ You have the right to:
 - complain to a data protection authority. In the UK this is the Information Commissioner's Office ([ico.org.uk](https://ico.org.uk/make-a-complaint/)). In the EU it is the authority in your country.
 
 **How to make a request:** email us at the address in section 1. We will reply within one month. Because RecoLing has no accounts, the only server-side records we could link to you are those tied to your device ID, and we may need that ID to find them. **TODO(max): the app does not currently show the device ID to the user. Decide how users can provide it, or explain what you can do without it.**
+
+Our hosting provider's logs, which include IP addresses, cannot be deleted before their 90-day retention period ends, so we cannot erase that data early. It is deleted automatically after 90 days.
 
 The simplest way to remove everything stored on your device is to delete the app.
 
