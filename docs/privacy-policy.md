@@ -24,7 +24,7 @@ RecoLing turns photos of your handwritten language-lesson notes into flashcards.
 | **Device ID** | A random identifier that the app creates on first use and stores in the iOS Keychain. It is not your Apple advertising identifier, and it does not contain your name or any details about your device. | To limit how many imports one device can make in a short time, which protects the service from abuse. |
 | **Connection data** | When the app contacts our server, our hosting provider records your IP address, the app's user-agent string, the time, the request path, the response status and the request size. | To run, secure and troubleshoot the server. |
 
-Our own server logs record the method and path of each request (for example `POST /extract`) and technical error details. They are not designed to contain your photo, your device ID or your vocabulary. **TODO(max): this is only fully true once the logging fix described in the PR is deployed. At the moment, a malformed request can cause its body, including the image, to be written to the error log.**
+Our own server logs record the method and path of each request (for example `POST /extract`) and technical error details. Request contents, including your photo and the extracted vocabulary, are removed from these logs before they are written, and your device ID is not logged.
 
 ## 4. AI processing (Anthropic)
 
@@ -54,7 +54,7 @@ The device ID is kept in the iOS Keychain. According to Expo, whose SecureStore 
 
 | Data | Where | How long |
 | --- | --- | --- |
-| Photo, language pair, extracted vocabulary | Our server | Held in memory only while your request is being processed, not stored. See the logging TODO in section 3. |
+| Photo, language pair, extracted vocabulary | Our server | Held in memory only while your request is being processed, not stored. |
 | Photo, language pair, extracted vocabulary | Anthropic | Deleted within 30 days, with the exceptions described in section 4. |
 | Device ID: rate-limit counters | Upstash | Expire automatically within about 2 minutes of your last request. |
 | Device ID: rate-limit usage statistics (hourly counts per device ID of allowed and blocked requests) | Upstash | **TODO(max): these records currently have no automatic expiry. Disable rate-limit analytics or add an expiry, then state the period here.** |
